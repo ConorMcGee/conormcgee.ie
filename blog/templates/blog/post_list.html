@@ -1,14 +1,9 @@
-<html>
-  <head>
-    <title>Conor Blog</title>
-  </head>
+{% extends "blog/includes/base.html" %}
 
-  <body>
+  {% block content %}
     {% for post in object_list %}
     <h1>{{post.title}}</h1>
     <h3>{{post.pub_date }}</h3>
     {{post.text}}
     {% endfor %}
-  </body>
-
-</html>
+  {% endblock %}
