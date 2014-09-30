@@ -1,9 +1,13 @@
 {% extends "blog/includes/base.html" %}
 
+  {% load custom_markdown %}
+
   {% block content %}
     {% for post in object_list %}
-    <h1>{{post.title}}</h1>
-    <h3>{{post.pub_date }}</h3>
-    {{post.text}}
+    <div class="post">
+      <h1>{{ post.title }}</h1>
+      <h3>{{ post.pub_date }}</h3>
+      {{ post.text|custom_markdown }}
+    </div>
     {% endfor %}
   {% endblock %}
