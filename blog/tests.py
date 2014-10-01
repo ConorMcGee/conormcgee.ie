@@ -3,6 +3,8 @@ from django.utils import timezone
 from blog.models import Post
 from django.template.defaultfilters import slugify
 import markdown
+from django.contrib.flatpages.models import FlatPage
+from django.contrib.sites.models import Site
 
 
 class PostTest(TestCase):
@@ -36,8 +38,11 @@ class PostTest(TestCase):
         self.assertEquals(only_post.pub_date.minute, post.pub_date.minute)
         self.assertEquals(only_post.pub_date.second, post.pub_date.second)
 
+class BaseAcceptanceTest(LiveServerTestCase):
+    def setUp(self):
+        self.client = Client()
 
-class AdminTest(LiveServerTestCase):
+class AdminTest(BaseAcceptanceTest):
     fixtures = ['users.json']
 
     def setUp(self):
@@ -177,7 +182,7 @@ class AdminTest(LiveServerTestCase):
         all_posts = Post.objects.all()
         self.assertEquals(len(all_posts), 0)
 
-class PostViewTest(LiveServerTestCase):
+class PostViewTest(BaseAcceptanceTest):
     def setUp(self):
         self.client = Client()
 
