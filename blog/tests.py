@@ -2,13 +2,17 @@ from django.test import TestCase, LiveServerTestCase, Client
 from django.utils import timezone
 from blog.models import Post
 from django.template.defaultfilters import slugify
-import markdown
 from django.contrib.flatpages.models import FlatPage
 from django.contrib.sites.models import Site
-
+from django.contrib.auth.models import User
+import markdown
 
 class PostTest(TestCase):
     def test_create_post(self):
+        # Create author
+        author = User.objects.create_user('testuser', 'user@example.com', 'password')
+        author.save()
+
         # Create the post
         post = Post()
 
@@ -17,6 +21,7 @@ class PostTest(TestCase):
         post.text = 'This is my first blog post'
         post.slug = slugify(post.title)
         post.pub_date = timezone.now()
+        post.author = author
 
         # Save it
         post.save()
@@ -37,6 +42,8 @@ class PostTest(TestCase):
         self.assertEquals(only_post.pub_date.hour, post.pub_date.hour)
         self.assertEquals(only_post.pub_date.minute, post.pub_date.minute)
         self.assertEquals(only_post.pub_date.second, post.pub_date.second)
+        self.assertEquals(only_post.author.username, 'testuser')
+        self.assertEquals(only_post.author.email, 'user@example.com')
 
 class BaseAcceptanceTest(LiveServerTestCase):
     def setUp(self):
@@ -117,20 +124,23 @@ class AdminTest(BaseAcceptanceTest):
         self.assertEquals(len(all_posts), 1)
 
     def test_edit_post(self):
-
-        # Log in
-        self.client.login(username='bobsmith', password="password")
+        # Create author
+        author = User.objects.create_user('testuser', 'user@example.com', 'password')
+        author.save()
 
         # Create the post
         post = Post()
         post.title = 'My first post'
         post.text = 'This is my first blog post'
         post.pub_date = timezone.now()
+        post.author = author
         post.save()
 
-        post_id = str(post.id)
+        # Log in
+        self.client.login(username='bobsmith', password="password")
 
         # Edit the post
+        post_id = str(post.id)
         response = self.client.post('/admin/blog/post/' + post_id +'/', {
             'title': 'My second post',
             'slug': 'my-second-post',
@@ -153,11 +163,16 @@ class AdminTest(BaseAcceptanceTest):
         self.assertEquals(only_post.text, 'This is my second blog post')
 
     def test_delete_post(self):
+        # Create author
+        author = User.objects.create_user('testuser', 'user@example.com', 'password')
+        author.save()
+
         # Create the post
         post = Post()
         post.title = 'My first post'
         post.text = 'This is my first blog post'
         post.pub_date = timezone.now()
+        post.author = author
         post.save()
 
         # Check new post saved
@@ -183,15 +198,18 @@ class AdminTest(BaseAcceptanceTest):
         self.assertEquals(len(all_posts), 0)
 
 class PostViewTest(BaseAcceptanceTest):
-    def setUp(self):
-        self.client = Client()
 
     def test_index(self):
+        # Create author
+        author = User.objects.create_user('testuser', 'user@example.com', 'password')
+        author.save()
+
         # Create the post
         post = Post()
         post.title = 'My first post'
         post.text = 'This is [my first blog post](http://127.0.0.1:8000/)'
         post.pub_date = timezone.now()
+        post.author = author
         post.save()
 
         # Check new post saved
@@ -216,12 +234,17 @@ class PostViewTest(BaseAcceptanceTest):
         self.assertTrue('<a href="http://127.0.0.1:8000/">my first blog post</a>' in response.content)
 
     def test_post_page(self):
+        # Create author
+        author = User.objects.create_user('testuser', 'user@example.com', 'password')
+        author.save()
+
         # Create the post
         post = Post()
         post.title = 'My first post'
         post.slug = 'my-first-post'
         post.text = 'This is [my first blog post](http://127.0.0.1:8000/)'
         post.pub_date = timezone.now()
+        post.author = author
         post.save()
 
         # Check new post saved
@@ -250,3 +273,38 @@ class PostViewTest(BaseAcceptanceTest):
 
         # Check the link is marked up properly
         self.assertTrue('<a href="http://127.0.0.1:8000/">my first blog post</a>' in response.content)
+
+class FlatPageViewTest(BaseAcceptanceTest):
+    def test_create_flat_page(self):
+        # Create page
+        page = FlatPage()
+        page.url = '/about/'
+        page.title = 'About me'
+        page.content = 'All about me'
+        page.save()
+
+        # Add site
+        page.sites.add(Site.objects.all()[0])
+        page.save()
+
+        # Check page is saved
+        all_pages = FlatPage.objects.all()
+        self.assertEquals(len(all_pages), 1)
+        only_page = all_pages[0]
+        self.assertEquals(only_page, page)
+
+        # Check data is correct
+        self.assertEquals(only_page.url, '/about/')
+        self.assertEquals(only_page.title, 'About me')
+        self.assertEquals(only_page.content, 'All about me')
+
+        # Get url
+        page_url = only_page.get_absolute_url()
+
+        # Get page
+        response = self.client.get(page_url)
+        self.assertEquals(response.status_code, 200)
+
+        # Check title and content in response
+        self.assertTrue('About me' in response.content)
+        self.assertTrue('All about me' in response.content)
