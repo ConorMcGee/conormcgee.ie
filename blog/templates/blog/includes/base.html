@@ -13,9 +13,10 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'blog/static/css/conorstyle.css' %}">
         <link rel="stylesheet" href="{% static 'blog/static/bower_components/html5-boilerplate/css/normalize.css' %}">
         <link rel="stylesheet" href="{% static 'blog/static/bower_components/html5-boilerplate/css/main.css' %}">
-        <link rel="stylesheet" href="{% static 'blog/static/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+        <!-- <link rel="stylesheet" href="{% static 'blog/static/bower_components/bootstrap/dist/css/bootstrap.min.css' %}"> -->
         <link rel="stylesheet" href="{% static 'blog/static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css' %}">
         <script src="{% static 'blog/static/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js' %}"></script>
     </head>
@@ -24,43 +25,42 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="navbar navbar-static-top navbar-inverse">
-          <div class="navbar-inner">
-            <div class="container">
-              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </a>
-              <a class="brand" href="/">Conor Blog</a>
-              <div class="nav-collapse collapse">
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
 
-        <div class="container">
-          {% block header %}
-              <div class="page-header">
-                <h1>Conor Blog</h1>
-              </div>
-          {% endblock %}
+        <header>
+          <h1 class="home current"><a href="index.html">Conor McGee</a></h1>
 
-          <div class="row">
+          <nav>
+          <ul>
+          <li class="coursework"><h2><a href="coursework.html">coursework</a></h2></li>
+          <li class="projects"><h2><a href="projects.html">projects</a></h2></li>
+          <li class="background"><h2><a href="background.html">background</a></h2></li>
+          <li class="contact"><h2><a href="contact.html">contact</a></h2></li>
+          </nav>
+        </header>
+
+          <article>
             {% block content %} {% endblock %}
-          </div>
+          </article>
         </div>
 
         <div class="container footer">
           <div class="row">
             <div class="span12">
-              <p>Copyright &copy; {%now "Y" %}</p>
+              <p> &copy; {% now "Y" %}</p>
             </div>
           </div>
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <link rel="stylesheet" href="{% static 'blog/static/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+        <!-- <link rel="stylesheet" href="{% static 'blog/static/bower_components/bootstrap/dist/css/bootstrap.min.css' %}"> -->
         <link rel="stylesheet" href="{% static 'blog/static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css' %}">
         <script src="{% static 'blog/static/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js' %}"></script>
 
