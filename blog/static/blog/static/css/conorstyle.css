@@ -203,6 +203,37 @@ img[src$=".jpg"] {
 	box-shadow: 10px 10px 5px #888888;
 	}
 
+	.blog:hover {
+		}
+	.blog a {
+		text-decoration:none;
+		color:#eee;
+		}
+	.blog a:hover {
+		-webkit-transition: text-shadow, 1s, ease;
+		transition: text-shadow, 1s, ease;
+		color:#FF8C00;
+		text-shadow:0px 0px 50px #FF8C00;
+		}
+	.blog.current a:hover {
+		-webkit-transition: text-shadow, 1s, ease;
+		transition: text-shadow, 1s, ease;
+		color:#FF8C00;
+		text-shadow:0px 0px 50px #FF8C00;
+		}
+	.blog h2 {
+		font-weight:200;
+		letter-spacing:0.1em;
+		}
+	.blog h3 {
+		font-weight:200;
+		}
+	.blog .current {
+		color:#FF8C00;
+		text-shadow:0px 0px 10px #FF8C00;
+		}
+
+
 .background:hover {
 	}
 .background a {
