@@ -2,7 +2,20 @@
 
     {% load custom_markdown %}
 
+    {% block title %}{{ post.title }}{% endblock %}
+
     {% block content %}
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <article class="blog">
       <div class="post">
         <h1>{{ object.title }}</h1>
         <h3>{{ object.pub_date }}</h3>
@@ -11,5 +24,6 @@
         <h4>Comments</h4>
         <div class="fb-comments" data-colorscheme="dark" data-href="http://{{ post.site }}{{ post.get_absolute_url }}" data-width="470" data-num-posts="10"></div>
       </div>
+    </article>
 
     {% endblock %}

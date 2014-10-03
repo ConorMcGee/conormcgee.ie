@@ -234,32 +234,32 @@ img[src$=".jpg"] {
 	}
 
 
-.background:hover {
+.about:hover {
 	}
-.background a {
+.about a {
 	text-decoration:none;
 	color:#eee;
 	}
-.background a:hover {
+.about a:hover {
 	-webkit-transition: text-shadow, 1s, ease;
 	transition: text-shadow, 1s, ease;
 	color:#FFEE00;
 	text-shadow:0px 0px 50px #FFEE00;
 	}
-.background.current a:hover {
+.about.current a:hover {
 	-webkit-transition: text-shadow, 1s, ease;
 	transition: text-shadow, 1s, ease;
 	color:#FFEE00;
 	text-shadow:0px 0px 50px #FFEE00;
 	}
-.background h2 {
+.about h2 {
 	font-weight:200;
 	letter-spacing:0.1em;
 	}
-.background h3 {
+.about h3 {
 	font-weight:200;
 	}
-.background .current {
+.about .current {
 	color:#FFEE00;
 	text-shadow:0px 0px 10px #FFEE00;
 	}
@@ -315,3 +315,22 @@ iframe {
 	width:100%;
 	float:center;
 }
+
+.footer {
+	display:block;
+	margin: auto;
+	clear: both;
+	background-color: #333;
+	padding: 20px;
+	width:66%;
+	border-style: solid;
+	border-width: 1px;
+	border-color:#333;
+	border-radius: 10px;
+	word-wrap: break-word;
+
+	-moz-animation: fadein 2s; /* Old Firefox */
+	-ms-animation: fadein 2s; /* IE */
+	-webkit-animation: fadein 2s;  /* Safari, Chrome */
+	animation:fadein 2s;
+	}
