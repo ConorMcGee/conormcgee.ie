@@ -33,6 +33,17 @@ nav h2{
 	display:inline;
 	}
 
+@media all and (max-width: 720px) {
+	nav {
+		width:100%;
+		background-color: #900;
+	}
+	nav li {
+		padding:2px;
+		margin:2px;
+	}
+}
+
 
 article {
 	display:block;
@@ -53,10 +64,10 @@ article {
 	animation:fadein 2s;
 	}
 
-@media all and (min-width: 320px) and (max-width: 780px) {
+@media all and (max-width: 720px) {
 	article {
 		width:100%;
-		background-color: #900;
+		padding-top:90px;
 	}
 }
 
