@@ -2,7 +2,7 @@
 
 nav {
 	display:block;
-	width: 66%;
+	width: 100%;
 	margin: auto;
 	padding: 0px;
 	background-color: #333;}
@@ -89,7 +89,7 @@ footer {
 	width: 33%;
 	}
 
-@media all and (max-width: 720px) {
+@media all and (max-width: 525px) {
 	article {
 		width:100%;
 		padding-top:90px;
@@ -130,7 +130,6 @@ footer {
 	color:#0eecde;
 	text-shadow:0px 0px 50px #0eecde;
 	}
-
 
 .coursework:hover {
 	/*border-color:#0BFF1B;
@@ -254,7 +253,6 @@ img[src$=".jpg"] {
 	text-shadow:0px 0px 10px #FF8C00;
 	}
 
-
 .about:hover {
 	}
 .about a {
@@ -315,7 +313,6 @@ img[src$=".jpg"] {
 	text-shadow:0px 0px 50px #FF0000;
 	}
 
-
 body{
 	background-color: #333;
 	color:#eee;
@@ -337,8 +334,6 @@ iframe {
 	width:100%;
 	float:center;
 }
-
-
 
 .footer {
 	display:block;
