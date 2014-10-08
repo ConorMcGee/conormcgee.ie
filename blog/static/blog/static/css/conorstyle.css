@@ -1,19 +1,20 @@
-@import url(//fonts.googleapis.com/css?family=Roboto:400,300);
+/* @import url(//fonts.googleapis.com/css?family=Roboto:400,300); */
 
-header {
+nav {
 	display:block;
 	width: 66%;
 	margin: auto;
-	padding: 0px;}
-header div {
+	padding: 0px;
+	background-color: #333;}
+nav div {
 	float: left;
 	padding: 0px;
 	}
-header h1 {
+nav h1 {
 	font-weight:normal;
 	letter-spacing: 0.2em;
 	}
-header h2 {
+nav h2 {
 	word-spacing:30px;
 	font-weight:200;
 	letter-spacing:0.3em;
@@ -97,7 +98,7 @@ footer {
 .home h3 {
 	font-weight:200;
 	}
-.home.current a {
+.home a.current {
 	-webkit-transition: text-shadow, 1s, ease;
 	transition: text-shadow, 1s, ease;
 	color:#0eecde;
@@ -300,6 +301,7 @@ body{
 	color:#eee;
 	font-family:'Futura','Roboto',sans-serif;
 	font-weight:200;
+	padding-top:90px;
 	}
 
 body a {

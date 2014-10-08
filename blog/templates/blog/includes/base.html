@@ -13,28 +13,28 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         {% load staticfiles %}
-        <link rel="stylesheet" href="{% static 'blog/static/css/conorstyle.css' %}">
         <link rel="stylesheet" href="{% static 'blog/static/bower_components/html5-boilerplate/css/normalize.css' %}">
         <link rel="stylesheet" href="{% static 'blog/static/bower_components/html5-boilerplate/css/main.css' %}">
-        <link rel="alternate stylesheet" href="{% static 'blog/static/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/static/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'blog/static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css' %}">
         <script src="{% static 'blog/static/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'blog/static/css/conorstyle.css' %}">
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <header>
-          <h1 class="home"><a href="/">Conor McGee</a></h1>
-            <nav>
+        <nav role="navigation" class="navbar navbar-fixed-top">
+          <div class="container">
+            <h1 class="home"><a href="/">Conor McGee</a></h1>
               <ul>
                 <li class="blog"><h2><a class="current" href="/blog">blog</a></h2>
                 <li class="projects"><h2><a href="/projects">projects</a></h2></li>
                 <li class="about"><h2><a href="/about">about</a></h2></li>
                 <li class="contact"><h2><a href="/contact">contact</a></h2></li>
               </ul>
-            </nav>
-          </header>
+          </div>
+        </nav>
 
 
             {% block content %} {% endblock %}

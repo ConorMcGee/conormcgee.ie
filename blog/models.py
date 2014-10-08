@@ -11,7 +11,7 @@ class Post(models.Model):
     site = models.ForeignKey(Site)
 
     def get_absolute_url(self):
-      return "/%s/%s/%s/" % (self.pub_date.year, self.pub_date.month, self.slug)
+      return "/blog/%s/%s/%s/" % (self.pub_date.year, self.pub_date.month, self.slug)
 
     def __unicode__(self):
       return self.title

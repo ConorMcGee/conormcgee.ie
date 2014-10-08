@@ -6,7 +6,7 @@
     <article class="blog">
       {% for post in object_list %}
       <div class="post blog">
-        <h1><a href="blog{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
+        <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
         <h3>{{ post.pub_date }}</h3>
         {{ post.text|custom_markdown }}
       </div>

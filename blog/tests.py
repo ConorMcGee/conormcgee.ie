@@ -251,7 +251,7 @@ class PostViewTest(BaseAcceptanceTest):
         self.assertEquals(len(all_posts), 1)
 
         # Fetch the index
-        response = self.client.get('/')
+        response = self.client.get('/blog')
         self.assertEquals(response.status_code, 200)
 
         # Check the post title is in the response
