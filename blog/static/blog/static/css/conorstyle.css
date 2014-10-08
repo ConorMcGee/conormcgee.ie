@@ -36,7 +36,6 @@ nav h2{
 @media all and (max-width: 720px) {
 	nav {
 		width:100%;
-		background-color: #900;
 	}
 	nav li {
 		padding:2px;
@@ -64,13 +63,6 @@ article {
 	animation:fadein 2s;
 	}
 
-@media all and (max-width: 720px) {
-	article {
-		width:100%;
-		padding-top:90px;
-	}
-}
-
 @keyframes fadein {
 	from { opacity:0}
 	to { opacity:1}
@@ -96,6 +88,16 @@ footer {
 	margin:auto;
 	width: 33%;
 	}
+
+@media all and (max-width: 720px) {
+	article {
+		width:100%;
+		padding-top:90px;
+	}
+	footer {
+		width:100%;
+	}
+}
 
 .home:hover {
 	}
