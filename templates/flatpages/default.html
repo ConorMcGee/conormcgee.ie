@@ -8,7 +8,7 @@
     {% load flatpages %}
     {% get_flatpages as flatpages %}
 
-        <article class="{{ flatpage.title }}">
+        <article class="container-fluid {{ flatpage.title }}">
             <h2>{{ flatpage.title }}</h2>
 
             <p>{{ flatpage.content }}</p>
