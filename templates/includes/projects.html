@@ -9,8 +9,6 @@
         <title>{% block title %}{% endblock %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="//use.typekit.net/wtq3lie.js"></script>
-        <script>try{Typekit.load();}catch(e){}</script>
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -27,6 +25,8 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <script src="//use.typekit.net/wtq3lie.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>
 
         <nav role="navigation" class="navbar navbar-fixed-top">
           <div class="container-fluid">
@@ -45,10 +45,7 @@
           </div>
         </nav>
 
-
             {% block content %} {% endblock %}
-
-
 
         <!--<div class="container footer navbar-fixed-bottom">         Don't think I actually need a footer...
           <div class="row">
@@ -58,7 +55,6 @@
           </div>
         </div> -->
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <link rel="alternate stylesheet" href="{% static 'blog/static/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'blog/static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css' %}">
         <script src="{% static 'blog/static/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js' %}"></script>
