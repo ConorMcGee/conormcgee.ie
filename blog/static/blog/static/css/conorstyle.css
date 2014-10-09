@@ -2,10 +2,12 @@
 
 nav {
 	display:block;
-	width: 100%;
+	width: 66%;
 	margin: auto;
 	padding: 0px;
-	background-color: #333;}
+	background-color: rgba(51, 51, 51, 0.95);
+	box-shadow: 0px 10px 20px rgba(51,51,51,0.95);
+	}
 nav div {
 	float: left;
 	padding: 0px;
@@ -31,7 +33,7 @@ nav li{
 	margin:10px;
 	}
 
-@media all and (max-width: 720px) {
+@media all and (max-width: 1052px) {
 	nav {
 		width:100%;
 	}
@@ -46,6 +48,7 @@ article {
 	margin: auto;
 	clear: both;
 	background-color: #333;
+	margin-top:30px;
 	padding: 20px;
 	width:66%;
 	border-style: solid;
@@ -215,10 +218,9 @@ a.projects:hover {
 	margin:auto;
 	width:66%;
 	}
-
-img[src$=".jpg"] {
-	box-shadow: 10px 10px 5px #888888;
-	}
+.projects li {
+	padding-bottom:20px;
+}
 
 .blog:hover {
 	}
@@ -313,9 +315,10 @@ img[src$=".jpg"] {
 body{
 	background-color: #333;
 	color:#eee;
-	font-family:'Futura','Roboto',sans-serif;
-	font-weight:200;
+	font-family:"futura-pt", '', 'Roboto',sans-serif;
+	font-weight:100;
 	padding-top:90px;
+	padding-bottom:60px;
 	}
 
 body a {
@@ -336,7 +339,7 @@ iframe {
 	display:block;
 	margin: auto;
 	clear: both;
-	background-color: #333;
+	background-color: rgba(51, 51, 51, 0.95);
 	padding: 10px;
 	width:66%;
 	word-wrap: break-word;
@@ -346,3 +349,7 @@ iframe {
 	-webkit-animation: fadein 2s;  /* Safari, Chrome */
 	animation:fadein 2s;
 	}
+
+.glyphicon {
+	width:200px;
+}

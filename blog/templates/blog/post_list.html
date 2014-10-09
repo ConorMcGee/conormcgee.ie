@@ -2,21 +2,23 @@
 
   {% load custom_markdown %}
 
+  {% block title %}blog{% endblock %}
+
   {% block content %}
     <article class="blog">
       {% for post in object_list %}
       <div class="post blog">
         <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
-        <h3>{{ post.pub_date }}</h3>
+        <h4>{{ post.pub_date }}</h3>
         {{ post.text|custom_markdown }}
       </div>
       {% endfor %}
 
       {% if page_obj.has_previous %}
-      <a href="blog{{ page_obj.previous_page_number }}/">Older stuff</a>
+      <a href="/blog{{ page_obj.previous_page_number }}/">Older stuff</a>
       {% endif %}
       {% if page_obj.has_next %}
-      <a href="blog{{ page_obj.next_page_number }}/">Newer stuff</a>
+      <a href="/blog{{ page_obj.next_page_number }}/">Newer stuff</a>
       {% endif %}
 
     </article>

@@ -89,4 +89,4 @@ STATIC_ROOT = '/var/www/static/'
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
-SITE_ID = 1
+SITE_ID = 2   # 2 = conormcgee.ie
