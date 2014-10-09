@@ -81,7 +81,7 @@ article {
 }
 
 article a {
-	font-weight:400;
+	font-weight:700;
 	}
 
 footer {
@@ -315,8 +315,9 @@ a.projects:hover {
 body{
 	background-color: #333;
 	color:#eee;
-	font-family:"futura-pt", '', 'Roboto',sans-serif;
-	font-weight:100;
+	font-family: "futura-pt", '',sans-serif;
+	font-weight:200;
+	font-size:large;
 	padding-top:90px;
 	padding-bottom:60px;
 	}
@@ -335,7 +336,7 @@ iframe {
 	float:center;
 }
 
-.footer {
+/* .footer {
 	display:block;
 	margin: auto;
 	clear: both;
@@ -344,12 +345,15 @@ iframe {
 	width:66%;
 	word-wrap: break-word;
 
-	-moz-animation: fadein 2s; /* Old Firefox */
-	-ms-animation: fadein 2s; /* IE */
-	-webkit-animation: fadein 2s;  /* Safari, Chrome */
+	-moz-animation: fadein 2s;
+	-ms-animation: fadein 2s;
+	-webkit-animation: fadein 2s;
 	animation:fadein 2s;
-	}
+} */
 
-.glyphicon {
-	width:200px;
+
+
+.wf-loading article {
+    /* Hide the body while web fonts are loading */
+    visibility: hidden;
 }
