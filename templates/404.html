@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Oops</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'blog/static/bower_components/html5-boilerplate/css/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/static/bower_components/html5-boilerplate/css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/static/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css' %}">
+        <script src="{% static 'blog/static/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'blog/static/css/conorstyle.css' %}">
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <script src="//use.typekit.net/wtq3lie.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>
+
+        <nav role="navigation" class="navbar navbar-fixed-top">
+          <div class="container-fluid">
+            <div class="row-fluid">
+          <h1 class="span home"><a {% if flatpage.title = "welcome" %} class="current" {% endif %} href="/">Conor McGee</a></h1>
+              <ul>
+                <div class="row-fluid">
+                <li class="span blog"><h2><a href="/blog">blog</a></h2>
+                <li class="span projects"><h2><a {% if flatpage.title = "projects" or flatpage.title = "coursework" %} class="current" {% endif %} href="/projects">projects</a></h2></li>
+              </div>
+                <div class="row-fluid">
+                <li class="span about"><h2><a {% if flatpage.title = "about" %} class="current" {% endif %} href="/about">about</a></h2></li>
+                <li class="span contact"><h2><a {% if flatpage.title = "contact" %} class="current" {% endif %} href="/contact">contact</a></h2></li>
+              </div>
+              </ul>
+          </div>
+        </nav>
+
+        <p> Well it looks like something went wrong. Try again? </p>
+
+        <link rel="alternate stylesheet" href="{% static 'blog/static/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css' %}">
+        <script src="{% static 'blog/static/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js' %}"></script>
+
+    </body>
+</html>
