@@ -20,11 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '^^%96l*n9s%7wc$j0+@khqo7-#ns^3tr_2*=%oc))#vm22ygt('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.conormcgee.com', '.conormcgee.ie', '.conormcgee.me', ]
 
 
 # Application definition
