@@ -24,7 +24,7 @@ DEBUG = False
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['.conormcgee.com', '.conormcgee.ie', '.conormcgee.me', ]
+ALLOWED_HOSTS = ['.conormcgee.com', '.conormcgee.ie', '.conormcgee.me', 'localhost']
 
 
 # Application definition
