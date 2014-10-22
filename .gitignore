@@ -2,3 +2,4 @@ venv/
 *.pyc
 blog/static/bower_components/
 conorblog/secrets.py
+.DS_STORE
