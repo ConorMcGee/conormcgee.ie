@@ -215,6 +215,7 @@ a.projects:hover {
 	text-shadow:0px 0px 10px #EC00DC;
 	}
 .projects img {
+	display:block;
 	margin:auto;
 	width:66%;
 	}
